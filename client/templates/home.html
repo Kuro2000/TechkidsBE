@@ -1,0 +1,33 @@
+<!doctype html>
+<div ng-controller="HomeController">
+    <input type="button" ng-click="Add()" value="Add">
+    <table>
+      <tr class="header">
+        <td>Index</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Facebook</td>
+        <td>Password</td>
+        <td>Action</td>
+      </tr>
+
+      <tr ng-repeat="c in data">
+        <td>{{$index + 1}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.age}}</td>
+        <td>{{c.facebook}}</td>
+        <td>{{c.password}}</td>
+        <td>
+          <input type="button" value="Update" ng-click="update($data)">
+          <input type="button" value="Delete" ng-click="delete($index)">
+        </td>
+      </tr>
+
+    </table>
+    <div class="pages">
+      <input type="button" ng-click="GoToHome()" value="1">
+      <input type="button" value="2">
+      <input type="button" value="3">
+      ...
+      <input type="button" name="name" value="100">
+    </div>
